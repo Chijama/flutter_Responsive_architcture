@@ -1,29 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_architecture/ui/base_widget.dart';
+import 'package:responsive_architecture/ui/responsive/orientation_layout.dart';
+import 'package:responsive_architecture/ui/responsive/responsive_builder.dart';
+import 'package:responsive_architecture/ui/responsive/screen_type_layout.dart';
+import 'package:responsive_architecture/ui/views/home_view_mobile.dart';
+import 'package:responsive_architecture/ui/views/home_view_tablet.dart';
 
 class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseWidget(
+    return ResponsiveBuilder(
       builder: (context, sizingInformation) {
-        return Scaffold(
-          body: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  margin: EdgeInsets.all(56),
-                  height: 150,
-                  color: Colors.blue,
-                  child: BaseWidget(
-                    builder: (context, sizingInformation) =>
-                        Text(sizingInformation.toString()),
-                  ),
-                ),
-                Text(sizingInformation.toString()),
-              ],
-            ),
+        return 
+        
+        ScreenTypeLayout(
+          mobile: OrientationLayout(
+            portrait: HomeMobilePortrait(),
+            landscape: HomeMobileLandscape(),
           ),
+          tablet: HomeViewTablet(),
         );
       },
     );

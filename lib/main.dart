@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:responsive_architecture/ui/views/home_view.dart';
 
 
-void main() {
-  runApp(const MyApp());
-}
 // void main() {
-//   runApp(
-//     DevicePreview(
-//       enabled: true,
-//       tools: [
-//         ...DevicePreview.defaultTools,
-      
-//       ],
-//       builder: (context) => const MyApp(),
-//     ),
-//   );
+//   runApp(const MyApp());
 // }
+void main() {
+  runApp(
+    DevicePreview(
+      enabled: true,
+      tools: [
+        ...DevicePreview.defaultTools,
+      
+      ],
+      builder: (context) => const MyApp(),
+    ),
+  );
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
