@@ -10,12 +10,10 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) {
-        return 
-        
-        ScreenTypeLayout(
+        return ScreenTypeLayout(
           mobile: OrientationLayout(
-            portrait: HomeMobilePortrait(),
-            landscape: HomeMobileLandscape(),
+            portrait: (context) => HomeMobilePortrait(),
+            landscape: (context) => HomeMobileLandscape(),
           ),
           tablet: HomeViewTablet(),
         );
