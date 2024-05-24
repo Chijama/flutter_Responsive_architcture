@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 abstract class BaseModelWidget<T> extends Widget {
+  const BaseModelWidget({super.key});
+
   @protected
   Widget build(BuildContext context, T model);
 
@@ -10,18 +12,11 @@ abstract class BaseModelWidget<T> extends Widget {
 }
 
 class DataProviderElement<T> extends ComponentElement {
-  DataProviderElement(BaseModelWidget widget) : super(widget);
+  DataProviderElement(BaseModelWidget<T> widget) : super(widget);
 
   @override
-  BaseModelWidget get widget => super.widget;
+  BaseModelWidget<T> get widget => super.widget as BaseModelWidget<T>;
 
   @override
   Widget build() => widget.build(this, Provider.of<T>(this));
-
-  // @override
-  // void update(BaseModelWidget newWidget) {
-  //   super.update(newWidget);
-  //   assert(widget == newWidget);
-  //   rebuild();
-  // }
 }

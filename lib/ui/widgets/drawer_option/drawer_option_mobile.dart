@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_architecture/datamodels/drawer_item_data.dart';
-import 'package:responsive_architecture/ui/responsive/orientation_layout.dart';
-import 'package:responsive_architecture/ui/responsive/screen_type_layout.dart';
 import 'package:responsive_architecture/ui/widgets/base_model_widget.dart';
 
 class DrawerOptionMobilePortrait extends BaseModelWidget<DrawerItemData> {
+  const DrawerOptionMobilePortrait({super.key});
+
  
 
   
   @override
-  Widget build(BuildContext context, DrawerItemData data) {
+  Widget build(BuildContext context, DrawerItemData model) {
     return Container(
-      padding: EdgeInsets.only(left: 25),
+      padding: const EdgeInsets.only(left: 25),
       height: 80,
       child: Row(
         children: [
           Icon(
-           data.iconData,
+           model.iconData,
             size: 25,
           ),
-          SizedBox(
+          const SizedBox(
             width: 25,
           ),
           Text(
-           data.title!,
-            style: TextStyle(fontSize: 25),
+           model.title!,
+            style: const TextStyle(fontSize: 25),
           )
         ],
       ),
@@ -33,14 +33,16 @@ class DrawerOptionMobilePortrait extends BaseModelWidget<DrawerItemData> {
 }
 
 class DrawerOptionMobileLandscape extends BaseModelWidget<DrawerItemData> {
+  const DrawerOptionMobileLandscape({super.key});
+
   
   @override
-  Widget build(BuildContext context,DrawerItemData data) {
+  Widget build(BuildContext context,DrawerItemData model) {
     return Container(
       height: 70,
       alignment: Alignment.center,
       child:  Icon(
-            data.iconData,
+            model.iconData,
             size: 25,
           ),
     );

@@ -17,16 +17,16 @@ class DrawerOption extends StatelessWidget {
       value: DrawerItemData(iconData: iconData, title: title),
       child: ScreenTypeLayout(
         mobile: OrientationLayout(
-          landscape: (context) => DrawerOptionMobileLandscape(),
-          portrait: (context) => DrawerOptionMobilePortrait(
+          landscape: (context) => const DrawerOptionMobileLandscape(),
+          portrait: (context) => const DrawerOptionMobilePortrait(
            
           ),
         ),
         tablet: OrientationLayout(
           landscape: (context) =>
-              DrawerOptionTabletPortrait(),
+              const DrawerOptionTabletPortrait(),
           portrait:(context) =>
-              DrawerOptionTabletPortrait(),
+              const DrawerOptionTabletPortrait(),
         ),
       ),
     );

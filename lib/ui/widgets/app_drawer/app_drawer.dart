@@ -12,26 +12,26 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: AppDrawerMobile(),
+      mobile:  const AppDrawerMobile(),
       tablet: OrientationLayout(
-        portrait:(context) => AppDrawerTabletPortrait(),
-        landscape: (context) => AppDrawerTabletLandscape(),
+        portrait:(context) => const AppDrawerTabletPortrait(),
+        landscape: (context) => const AppDrawerTabletLandscape(),
       ),
     );
   }
   
   static List<Widget> getDrawerOptions() {
     return [
-      DrawerOption(
+      const DrawerOption(
         title: 'Images',
         iconData: Icons.image,
       ),
-      DrawerOption(title: 'Reports', iconData: Icons.photo_filter),
-      DrawerOption(
+      const DrawerOption(title: 'Reports', iconData: Icons.photo_filter),
+      const DrawerOption(
         title: 'Incidents',
         iconData: Icons.message,
       ),
-      DrawerOption(title: 'Settings', iconData: Icons.settings)
+      const DrawerOption(title: 'Settings', iconData: Icons.settings)
     ];
   }
 }

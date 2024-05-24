@@ -6,6 +6,8 @@ import 'package:responsive_architecture/ui/views/home_view_mobile.dart';
 import 'package:responsive_architecture/ui/views/home_view_tablet.dart';
 
 class HomeView extends StatelessWidget {
+  const HomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ResponsiveBuilder(
@@ -13,9 +15,10 @@ class HomeView extends StatelessWidget {
         return ScreenTypeLayout(
           mobile: OrientationLayout(
             portrait: (context) => HomeMobilePortrait(),
-            landscape: (context) => HomeMobileLandscape(),
+            landscape: (context) => const HomeMobileLandscape(),
           ),
-          tablet: HomeViewTablet(),
+          tablet: const HomeViewTablet(),
+          
         );
       },
     );
